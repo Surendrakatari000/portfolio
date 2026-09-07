@@ -1,0 +1,148 @@
+/* --- DSA Section --- */
+.dsa-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.dsa-card {
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  text-align: center;
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.dsa-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  transition: opacity var(--transition-base);
+}
+
+.dsa-card.leetcode::before {
+  background: linear-gradient(90deg, #ffa116, #ffb84d);
+}
+
+.dsa-card.codeforces::before {
+  background: linear-gradient(90deg, #1890ff, #40a9ff);
+}
+
+.dsa-card:hover {
+  border-color: rgba(14, 165, 233, 0.3);
+  box-shadow: var(--shadow-glow-lg);
+  transform: translateY(-6px);
+}
+
+.dsa-platform-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-lg);
+  margin: 0 auto 20px;
+  font-size: 1.6rem;
+  font-weight: 800;
+  font-family: var(--font-heading);
+}
+
+.dsa-card.leetcode .dsa-platform-logo {
+  background: rgba(255, 161, 22, 0.1);
+  color: #ffa116;
+  border: 1px solid rgba(255, 161, 22, 0.2);
+}
+
+.dsa-card.codeforces .dsa-platform-logo {
+  background: rgba(24, 144, 255, 0.1);
+  color: #1890ff;
+  border: 1px solid rgba(24, 144, 255, 0.2);
+}
+
+.dsa-platform-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.dsa-count {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  font-weight: 800;
+  margin: 16px 0 4px;
+  line-height: 1;
+}
+
+.dsa-card.leetcode .dsa-count {
+  background: linear-gradient(135deg, #ffa116, #ffb84d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.dsa-card.codeforces .dsa-count {
+  background: linear-gradient(135deg, #1890ff, #40a9ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.dsa-label {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+.dsa-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 10px 24px;
+  border-radius: var(--radius-full);
+  transition: all var(--transition-base);
+}
+
+.dsa-card.leetcode .dsa-link {
+  color: #ffa116;
+  background: rgba(255, 161, 22, 0.08);
+  border: 1px solid rgba(255, 161, 22, 0.2);
+}
+
+.dsa-card.leetcode .dsa-link:hover {
+  background: rgba(255, 161, 22, 0.15);
+  color: #ffb84d;
+}
+
+.dsa-card.codeforces .dsa-link {
+  color: #1890ff;
+  background: rgba(24, 144, 255, 0.08);
+  border: 1px solid rgba(24, 144, 255, 0.2);
+}
+
+.dsa-card.codeforces .dsa-link:hover {
+  background: rgba(24, 144, 255, 0.15);
+  color: #40a9ff;
+}
+
+@media (max-width: 768px) {
+  .dsa-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .dsa-count {
+    font-size: 2.4rem;
+  }
+}
