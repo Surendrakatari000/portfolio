@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, ArrowDown, ChevronDown } from 'lucide-react'
+import { Github, Linkedin, Mail, ArrowDown } from 'lucide-react'
 import '../styles/hero.css'
 
 const particles = Array.from({ length: 20 }, (_, i) => ({
